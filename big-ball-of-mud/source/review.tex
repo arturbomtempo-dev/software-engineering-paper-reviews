@@ -1,0 +1,112 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage[brazil]{babel}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}  
+
+\begin{document}
+
+\title{Resenha do Artigo Big Ball of Mud: Uma Análise Sobre a Evolução de Arquiteturas de Software}
+
+\author{
+\IEEEauthorblockN{Artur Bomtempo Colen}
+\IEEEauthorblockA{
+Engenharia de Software \\
+Pontifícia Universidade Católica de Minas Gerais (PUC Minas) \\
+Belo Horizonte, Brasil \\
+abcolen@sga.pucminas.br}
+}
+
+\maketitle
+
+\begin{abstract}
+Este trabalho apresenta um resumo analítico do artigo \textit{Big Ball of Mud}, de Brian Foote e Joseph Yoder, que discute um fenômeno bastante comum no desenvolvimento de sistemas reais: softwares que evoluem ao longo do tempo sem uma arquitetura clara e bem definida. Diferente do que muitas vezes é apresentado na teoria, diversos sistemas utilizados no mundo real acabam sendo construídos de maneira incremental, com decisões tomadas principalmente para atender necessidades imediatas. O artigo analisa fatores técnicos, organizacionais e humanos que contribuem para esse tipo de estrutura e apresenta padrões que explicam como esses sistemas surgem e continuam evoluindo. Este resumo tem como objetivo apresentar os principais conceitos discutidos pelos autores, destacando os desafios relacionados à manutenção, evolução e compreensão de sistemas complexos. Além disso, o trabalho busca relacionar essas ideias com o contexto acadêmico, mostrando como compreender esse fenômeno pode ajudar estudantes e futuros profissionais a lidar melhor com sistemas reais.
+\end{abstract}
+
+\begin{IEEEkeywords}
+arquitetura de software, engenharia de software, manutenção de software, design de sistemas, complexidade de software
+\end{IEEEkeywords}
+
+\section{Introdução}
+
+Durante o desenvolvimento de sistemas de software, é comum que arquiteturas bem estruturadas sejam apresentadas como objetivo ideal. Modelos organizados, padrões de projeto e boas práticas de desenvolvimento são frequentemente ensinados como base para a construção de sistemas de qualidade. No entanto, na prática, muitos sistemas reais evoluem de maneira diferente do que é planejado inicialmente.
+
+O artigo \textit{Big Ball of Mud} descreve esse cenário ao apresentar um tipo de arquitetura que surge de forma gradual e pouco estruturada. O termo pode ser traduzido livremente como ``grande bola de lama'', uma metáfora utilizada pelos autores para representar sistemas que cresceram de maneira desorganizada ao longo do tempo. Em vez de seguir um planejamento arquitetural rígido, esses sistemas evoluem por meio de adaptações constantes para atender demandas imediatas. Com o passar do tempo, o resultado pode ser um sistema complexo, difícil de entender e manter.
+
+Mesmo assim, esse tipo de estrutura é extremamente comum em projetos reais. Por esse motivo, compreender esse fenômeno é importante para profissionais da área, pois ajuda a entender melhor a diferença entre teoria e prática no desenvolvimento de sistemas.
+
+\section{O Conceito de Big Ball of Mud}
+
+A expressão utilizada pelos autores descreve sistemas que não possuem uma arquitetura bem organizada. Nesses casos, a estrutura do software surge de forma improvisada, sendo moldada por necessidades imediatas e mudanças frequentes ao longo do tempo.
+
+Nesse tipo de sistema, a organização do código tende a ser influenciada mais por decisões rápidas do que por um planejamento arquitetural consistente. Isso pode ocorrer por diversos motivos, como prazos curtos, mudanças de requisitos ou limitações de recursos.
+
+Como consequência, esses sistemas geralmente apresentam características como:
+
+\begin{itemize}
+\item Forte acoplamento entre componentes
+\item Baixa modularidade
+\item Código difícil de compreender
+\item Alta complexidade estrutural
+\item Dificuldade para manutenção e evolução
+\end{itemize}
+
+Apesar dessas características negativas, os autores destacam que muitos sistemas importantes utilizados atualmente apresentam esse tipo de estrutura em algum nível.
+
+\section{Fatores que Contribuem para o Surgimento}
+
+O surgimento desse tipo de arquitetura normalmente está relacionado a condições reais do desenvolvimento de software. Entre os principais fatores apresentados no artigo estão a pressão por resultados rápidos e a necessidade de entregar funcionalidades em prazos curtos.
+
+Além disso, mudanças frequentes nos requisitos do sistema podem dificultar a manutenção de uma arquitetura planejada inicialmente. À medida que novas funcionalidades são adicionadas, o sistema pode crescer de maneira desorganizada.
+
+Outro fator importante é a rotatividade de desenvolvedores nas equipes. Quando novas pessoas passam a trabalhar no sistema, pode ser difícil manter uma visão arquitetural consistente. Isso pode levar a decisões locais que resolvem problemas imediatos, mas aumentam a complexidade geral do sistema.
+
+Também é comum que sistemas comecem pequenos e simples, mas evoluam gradualmente até se tornarem grandes e complexos. Nesse processo, a arquitetura inicial pode deixar de atender às necessidades do sistema.
+
+\section{Padrões Identificados no Artigo}
+
+O artigo não apenas descreve o problema, mas também apresenta padrões que ajudam a entender como esse tipo de sistema se desenvolve ao longo do tempo. Esses padrões representam comportamentos comuns observados em projetos reais.
+
+Um dos pontos discutidos é que muitos sistemas são construídos com foco em resolver problemas imediatos, priorizando a funcionalidade em vez da organização estrutural. Esse processo pode ser eficiente no curto prazo, mas pode gerar dificuldades futuras.
+
+Outro aspecto importante é a adaptação constante do software. Sistemas reais precisam evoluir para atender novas demandas, e essa evolução nem sempre acontece de forma planejada. Assim, o sistema vai se transformando gradualmente, acumulando complexidade.
+
+Os autores também destacam que, apesar das limitações desse tipo de arquitetura, ela pode ser resiliente e capaz de continuar funcionando por muitos anos. Isso acontece porque o sistema vai sendo ajustado continuamente pelos desenvolvedores.
+
+\section{Impactos na Engenharia de Software}
+
+O estudo desse conceito traz reflexões importantes para a área de desenvolvimento de software. Ele mostra que a realidade do desenvolvimento muitas vezes é diferente do modelo ideal apresentado em teoria.
+
+Compreender esse fenômeno ajuda profissionais a reconhecer sinais de problemas arquiteturais e a tomar decisões mais conscientes durante o desenvolvimento de sistemas. Em vez de tentar reconstruir completamente um sistema complexo, muitas vezes é mais viável realizar melhorias graduais.
+
+Práticas como refatoração, documentação e revisão de código podem contribuir para reduzir a complexidade ao longo do tempo. Além disso, o planejamento arquitetural contínuo pode ajudar a evitar que o sistema se torne cada vez mais difícil de manter.
+
+Esse conceito pode ser observado em sistemas reais utilizados por empresas, especialmente em softwares que foram desenvolvidos ao longo de muitos anos. Em ambientes corporativos, é comum que aplicações cresçam rapidamente para atender necessidades de negócio, o que pode resultar em estruturas semelhantes às descritas no artigo. Dessa forma, compreender esse fenômeno ajuda equipes de desenvolvimento a identificar problemas arquiteturais e planejar melhorias progressivas no sistema.
+
+Para estudantes da área, esse tipo de estudo é importante porque aproxima o aprendizado acadêmico da realidade encontrada em projetos reais.
+
+\section{Conclusão}
+
+O artigo \textit{Big Ball of Mud} apresenta uma visão realista sobre como muitos sistemas de software são construídos e evoluem ao longo do tempo. Embora arquiteturas bem planejadas sejam desejáveis, a prática mostra que diversos fatores influenciam o desenvolvimento de sistemas de maneira significativa.
+
+Ao compreender esse tipo de estrutura, é possível desenvolver uma visão mais crítica sobre o processo de desenvolvimento de software. Isso permite identificar problemas estruturais e buscar soluções que melhorem a organização e a manutenção dos sistemas.
+
+Dessa forma, o estudo desse conceito contribui para a formação de profissionais mais preparados para lidar com os desafios reais da área.
+
+\begin{thebibliography}{00}
+
+\bibitem{b1}
+B. Foote and J. Yoder,
+``Big Ball of Mud,''
+Proceedings of the Pattern Languages of Programs Conference (PLoP), 1997.
+
+\end{thebibliography}
+
+\end{document}
