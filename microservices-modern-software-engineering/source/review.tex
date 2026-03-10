@@ -1,0 +1,102 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage[brazil]{babel}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}  
+
+\begin{document}
+
+\title{Resenha da Seção de Microsserviços do Livro Engenharia de Software Moderna}
+
+\author{
+\IEEEauthorblockN{Artur Bomtempo Colen}
+\IEEEauthorblockA{
+Engenharia de Software \\
+Pontifícia Universidade Católica de Minas Gerais (PUC Minas) \\
+Belo Horizonte, Brasil \\
+abcolen@sga.pucminas.br}
+}
+
+\maketitle
+
+\begin{abstract}
+
+Esta resenha apresenta uma análise da Seção 7.4 do livro \textit{Engenharia de Software Moderna}, que aborda o conceito de arquitetura baseada em microsserviços. O texto discute como esse estilo arquitetural surgiu como alternativa a arquiteturas monolíticas tradicionais, permitindo maior modularização, escalabilidade e independência entre componentes de um sistema. Além disso, são apresentados os principais benefícios e desafios associados à adoção de microsserviços em sistemas reais. Esta resenha tem como objetivo explicar os principais conceitos discutidos na seção, destacando como a arquitetura de microsserviços pode contribuir para o desenvolvimento de sistemas mais flexíveis e evolutivos. Também são discutidas aplicações práticas desse modelo arquitetural no contexto da engenharia de software moderna.
+
+\end{abstract}
+
+\begin{IEEEkeywords}
+arquitetura de software, microsserviços, sistemas distribuídos, engenharia de software, design de sistemas
+\end{IEEEkeywords}
+
+\section{Introdução}
+
+A arquitetura de software desempenha um papel fundamental no desenvolvimento de sistemas complexos. A forma como um sistema é estruturado influencia diretamente fatores como manutenção, escalabilidade, evolução e organização do código. Tradicionalmente, muitos sistemas foram desenvolvidos utilizando arquiteturas monolíticas, nas quais todas as funcionalidades da aplicação são implementadas dentro de uma única base de código.
+
+Com o crescimento dos sistemas e o aumento da complexidade das aplicações modernas, surgiram novas abordagens arquiteturais que buscam melhorar a modularização e a capacidade de evolução do software. Nesse contexto, a arquitetura baseada em microsserviços tem ganhado grande destaque na indústria de software.
+
+A Seção 7.4 do livro \textit{Engenharia de Software Moderna} apresenta esse modelo arquitetural, discutindo seus principais conceitos, vantagens e desafios. O objetivo desta resenha é explicar os pontos principais apresentados pelo autor, destacando como os microsserviços podem contribuir para a construção de sistemas mais escaláveis e flexíveis. A partir da leitura da seção, é possível compreender como essa abordagem arquitetural busca resolver limitações observadas em sistemas monolíticos tradicionais, oferecendo maior modularidade e facilitando a evolução de sistemas complexos.
+
+\section{Arquitetura de Microsserviços}
+
+A arquitetura de microsserviços consiste em dividir um sistema em diversos serviços menores e independentes, cada um responsável por uma funcionalidade específica do sistema. Diferente de um sistema monolítico, no qual todas as partes da aplicação estão fortemente integradas, os microsserviços permitem que diferentes componentes sejam desenvolvidos, implantados e evoluídos de forma independente.
+
+Cada microsserviço possui responsabilidades bem definidas e normalmente se comunica com outros serviços por meio de interfaces bem estabelecidas, como APIs REST. Essa separação permite que equipes diferentes trabalhem em partes distintas do sistema sem causar grandes impactos em outras funcionalidades.
+
+Outra característica importante desse modelo é que cada serviço pode possuir sua própria lógica de negócio e, em alguns casos, até mesmo seu próprio banco de dados. Essa independência reduz o acoplamento entre os componentes do sistema e facilita a evolução da aplicação ao longo do tempo.
+
+Essa abordagem também contribui para melhorar a escalabilidade dos sistemas, pois serviços específicos podem ser escalados de forma independente conforme a demanda.
+
+\section{Benefícios da Arquitetura de Microsserviços}
+
+O modelo de microsserviços apresenta diversas vantagens em relação às arquiteturas monolíticas tradicionais. Um dos principais benefícios é a modularidade. Ao dividir o sistema em serviços menores, torna-se mais fácil compreender, manter e evoluir cada parte da aplicação.
+
+Outro benefício importante é a possibilidade de implantação independente. Em sistemas monolíticos, qualquer alteração normalmente exige a implantação de toda a aplicação. Em arquiteturas baseadas em microsserviços, é possível atualizar apenas o serviço afetado pela mudança.
+
+Além disso, essa arquitetura permite maior flexibilidade tecnológica. Diferentes microsserviços podem ser desenvolvidos utilizando tecnologias distintas, dependendo das necessidades específicas de cada componente.
+
+A escalabilidade também é facilitada nesse modelo. Caso uma determinada funcionalidade do sistema receba grande volume de requisições, apenas o serviço responsável por essa funcionalidade pode ser escalado, evitando o desperdício de recursos computacionais.
+
+\section{Desafios no Uso de Microsserviços}
+
+Apesar das vantagens apresentadas, a adoção de microsserviços também traz desafios importantes. Um dos principais está relacionado ao aumento da complexidade da infraestrutura. Como o sistema passa a ser composto por diversos serviços distribuídos, torna-se necessário lidar com questões como comunicação entre serviços, monitoramento e gerenciamento de falhas.
+
+Outro desafio envolve a necessidade de mecanismos eficientes de integração entre os serviços. Como cada componente funciona de forma independente, é fundamental garantir que a comunicação entre eles seja confiável e eficiente.
+
+Além disso, a gestão de dados pode se tornar mais complexa. Em muitos casos, cada microsserviço possui seu próprio armazenamento de dados, o que exige estratégias específicas para manter a consistência das informações.
+
+Por esse motivo, a adoção de microsserviços normalmente exige o uso de ferramentas e práticas adicionais, como sistemas de monitoramento, automação de implantação e infraestrutura baseada em contêineres.
+
+\section{Aplicação Prática}
+
+Na prática, a arquitetura de microsserviços é amplamente utilizada por empresas que desenvolvem sistemas de grande escala, como plataformas de comércio eletrônico, serviços de streaming e aplicações baseadas em nuvem. Organizações como Amazon, Netflix e Uber utilizam esse modelo arquitetural para lidar com sistemas altamente complexos e com grande volume de usuários.
+
+Ao dividir seus sistemas em serviços menores, essas empresas conseguem escalar funcionalidades específicas de acordo com a demanda e realizar atualizações de forma mais rápida e segura.
+
+Além disso, o uso de microsserviços também pode ajudar a evitar problemas associados a sistemas monolíticos muito grandes, que muitas vezes acabam se tornando difíceis de manter e evoluir ao longo do tempo. Quando um sistema monolítico cresce excessivamente, a forte dependência entre seus componentes pode dificultar modificações e atualizações, tornando o desenvolvimento mais lento e arriscado. A arquitetura de microsserviços busca reduzir esse tipo de problema ao promover maior separação de responsabilidades dentro do sistema.
+
+\section{Conclusão}
+
+A arquitetura baseada em microsserviços representa uma abordagem moderna para o desenvolvimento de sistemas de software complexos. Ao dividir a aplicação em serviços menores e independentes, esse modelo permite maior modularidade, escalabilidade e flexibilidade tecnológica.
+
+No entanto, a adoção dessa arquitetura também traz desafios relacionados à complexidade da infraestrutura e à comunicação entre serviços. Por esse motivo, sua implementação exige planejamento arquitetural adequado e o uso de ferramentas apropriadas.
+
+Mesmo assim, os microsserviços têm se tornado uma das abordagens mais utilizadas na indústria de software moderna, especialmente em sistemas de grande escala. Compreender esse modelo arquitetural é importante para estudantes e profissionais da área, pois ele representa uma tendência relevante no desenvolvimento de sistemas distribuídos.
+
+\begin{thebibliography}{00}
+
+\bibitem{b1}
+M. T. Valente,
+\textit{Engenharia de Software Moderna}.
+Belo Horizonte: UFMG, 2020.
+
+\end{thebibliography}
+
+\end{document}
