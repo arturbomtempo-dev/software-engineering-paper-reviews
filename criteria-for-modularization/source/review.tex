@@ -1,0 +1,112 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage[brazil]{babel}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}  
+
+\begin{document}
+
+\title{Resenha do Artigo On the Criteria To Be Used in Decomposing Systems into Modules}
+
+\author{
+\IEEEauthorblockN{Artur Bomtempo Colen}
+\IEEEauthorblockA{
+Engenharia de Software \\
+Pontifícia Universidade Católica de Minas Gerais (PUC Minas) \\
+Belo Horizonte, Brasil \\
+abcolen@sga.pucminas.br}
+}
+
+\maketitle
+
+\begin{abstract}
+
+Este trabalho apresenta uma análise do artigo \textit{On the Criteria To Be Used in Decomposing Systems into Modules}, escrito por D. L. Parnas. O artigo discute a importância da modularização no desenvolvimento de software e, principalmente, os critérios utilizados para dividir sistemas em módulos. O autor compara abordagens tradicionais e alternativas de decomposição, destacando que a forma como os módulos são definidos impacta diretamente na flexibilidade, manutenção, independência de desenvolvimento e compreensão do sistema. A principal contribuição do trabalho é a introdução do conceito de \textit{information hiding} (ocultação de informação), que propõe que cada módulo deve esconder decisões de projeto específicas. Esta resenha tem como objetivo explicar os principais conceitos discutidos no artigo, apresentar o entendimento geral sobre suas ideias e refletir sobre sua aplicação prática no desenvolvimento de software.
+
+\end{abstract}
+
+\begin{IEEEkeywords}
+engenharia de software, modularização, arquitetura de software, information hiding, projeto de software
+\end{IEEEkeywords}
+
+\section{Introdução}
+
+A modularização é um conceito essencial na engenharia de software, sendo amplamente utilizada para reduzir a complexidade de sistemas e facilitar seu desenvolvimento. Ao dividir um sistema em partes menores, torna-se possível organizar melhor o código, distribuir tarefas entre equipes e tornar o sistema mais compreensível.
+
+No entanto, no artigo analisado, D. L. Parnas questiona um ponto importante: não basta apenas modularizar, é necessário escolher corretamente os critérios utilizados para essa divisão. Segundo o autor, muitas abordagens tradicionais falham justamente por não considerarem adequadamente quais aspectos do sistema devem ser isolados.
+
+Para demonstrar essa questão, o artigo utiliza como exemplo um sistema de indexação chamado KWIC (Key Word In Context), apresentando duas formas diferentes de decomposição. A partir dessa comparação, o autor evidencia que diferentes critérios de modularização podem levar a resultados significativamente distintos em termos de manutenção, flexibilidade e entendimento do sistema.
+
+\section{Modularização Tradicional}
+
+A primeira abordagem apresentada no artigo segue o modelo tradicional de decomposição, no qual o sistema é dividido de acordo com as etapas de processamento. No exemplo do KWIC, isso resulta em módulos como entrada de dados, geração de deslocamentos circulares, ordenação e saída.
+
+Essa forma de organização é bastante intuitiva, pois se aproxima da ideia de um fluxograma, onde cada módulo representa uma etapa do processamento. Por esse motivo, é uma abordagem muito comum no ensino e na prática inicial de programação.
+
+Entretanto, o artigo demonstra que essa estratégia possui limitações importantes. Um dos principais problemas é o forte acoplamento entre os módulos, já que eles compartilham estruturas de dados e dependem de decisões internas uns dos outros. Isso faz com que alterações simples, como mudanças no formato de armazenamento de dados, possam exigir modificações em diversos módulos simultaneamente.
+
+Além disso, a necessidade de conhecer detalhes internos de vários módulos para entender o sistema como um todo dificulta sua manutenção e evolução. Dessa forma, embora funcional, essa abordagem não é a mais adequada para sistemas que precisam ser flexíveis e adaptáveis a mudanças.
+
+\section{Ocultação de Informação (Information Hiding)}
+
+Como alternativa, Parnas propõe o conceito de \textit{information hiding}, que representa uma mudança significativa na forma de pensar a modularização.
+
+Nessa abordagem, os módulos não são organizados com base nas etapas de execução, mas sim nas decisões de projeto que podem sofrer alterações ao longo do tempo. Cada módulo é responsável por esconder uma dessas decisões, expondo apenas uma interface bem definida para os demais.
+
+No exemplo do artigo, a forma como as linhas são armazenadas é encapsulada em um módulo específico. Outros módulos não precisam saber como os dados estão organizados internamente, interagindo apenas por meio de funções disponibilizadas.
+
+Essa abordagem traz diversas vantagens. A principal delas é a redução do impacto de mudanças, já que alterações internas ficam restritas ao módulo responsável. Além disso, as interfaces se tornam mais simples e abstratas, facilitando o desenvolvimento independente de diferentes partes do sistema.
+
+Outro ponto importante é a melhoria na compreensão do sistema, pois cada módulo pode ser entendido isoladamente, sem a necessidade de conhecer detalhes internos de outros módulos.
+
+\section{Comparação entre as Abordagens}
+
+O artigo apresenta uma comparação clara entre as duas formas de modularização, mostrando que ambas são válidas, mas produzem resultados diferentes.
+
+Na abordagem tradicional, mudanças em decisões de projeto tendem a se espalhar por vários módulos, aumentando o esforço de manutenção. Já na abordagem baseada em ocultação de informação, essas mudanças ficam localizadas, tornando o sistema mais flexível.
+
+Além disso, a segunda abordagem favorece o desenvolvimento independente, pois as interfaces são mais simples e não expõem detalhes internos. Isso reduz a necessidade de comunicação constante entre equipes.
+
+O autor também destaca que a escolha inadequada de modularização pode comprometer a eficiência da implementação, sendo necessário cuidado para equilibrar organização e desempenho.
+
+\section{Aplicação Prática}
+
+Os conceitos apresentados no artigo possuem grande relevância prática e continuam sendo amplamente utilizados no desenvolvimento de software atual.
+
+Na prática, o princípio de ocultação de informação está diretamente relacionado a conceitos como encapsulamento na programação orientada a objetos, uso de APIs e separação em camadas arquiteturais. Esses conceitos ajudam a reduzir o acoplamento e aumentar a coesão entre os componentes de um sistema.
+
+Um exemplo claro é o desenvolvimento de sistemas que utilizam banco de dados. Ao isolar o acesso aos dados em um módulo específico, torna-se possível alterar a tecnologia utilizada ou otimizar consultas sem impactar o restante da aplicação.
+
+Outro exemplo é o uso de serviços e microsserviços, onde cada componente encapsula uma responsabilidade específica e expõe apenas interfaces bem definidas. Isso permite que diferentes partes do sistema evoluam de forma independente.
+
+Além disso, durante projetos acadêmicos, é comum enfrentar dificuldades relacionadas a mudanças de requisitos. Aplicar o conceito de \textit{information hiding} ajuda a minimizar o retrabalho, pois as alterações ficam concentradas em módulos específicos.
+
+Dessa forma, o entendimento dessas ideias contribui diretamente para a construção de sistemas mais organizados, flexíveis e fáceis de manter, sendo um conhecimento essencial para a formação em engenharia de software.
+
+\section{Conclusão}
+
+O artigo de D. L. Parnas apresenta uma contribuição fundamental para a engenharia de software ao discutir critérios mais eficazes para a modularização de sistemas.
+
+Ao criticar a abordagem tradicional baseada em etapas de processamento e propor o conceito de ocultação de informação, o autor demonstra que a forma como os módulos são definidos influencia diretamente a qualidade do software.
+
+A principal ideia apresentada é que módulos devem ser organizados em torno de decisões de projeto que podem mudar, permitindo maior flexibilidade, melhor manutenção e maior independência entre componentes.
+
+Esses conceitos continuam extremamente relevantes na prática atual e estão presentes em diversas técnicas e arquiteturas modernas. Para estudantes e profissionais da área, compreender e aplicar esses princípios é essencial para desenvolver sistemas mais robustos e sustentáveis ao longo do tempo.
+
+\begin{thebibliography}{00}
+
+\bibitem{b1}
+D. L. Parnas,
+``On the Criteria To Be Used in Decomposing Systems into Modules,''
+Communications of the ACM, vol. 15, no. 12, pp. 1053--1058, 1972.
+
+\end{thebibliography}
+
+\end{document}
