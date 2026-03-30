@@ -1,0 +1,112 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage[brazil]{babel}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}  
+
+\begin{document}
+
+\title{Resenha sobre o Padrão de Projeto Facade}
+
+\author{
+\IEEEauthorblockN{Artur Bomtempo Colen}
+\IEEEauthorblockA{
+Engenharia de Software \\
+Pontifícia Universidade Católica de Minas Gerais (PUC Minas) \\
+Belo Horizonte, Brasil \\
+abcolen@sga.pucminas.br}
+}
+
+\maketitle
+
+\begin{abstract}
+
+Este trabalho apresenta uma análise do material sobre o padrão de projeto \textit{Facade}, disponível no site Refactoring Guru. O conteúdo descreve um padrão estrutural cujo objetivo é fornecer uma interface simplificada para um subsistema complexo, reduzindo o acoplamento entre componentes e facilitando a utilização de funcionalidades pelo cliente. O material aborda o problema da complexidade em sistemas compostos por múltiplas classes, apresenta a solução por meio de uma fachada e discute aspectos como estrutura, aplicabilidade, vantagens e limitações. Esta resenha tem como objetivo explicar os principais conceitos apresentados, demonstrar o entendimento sobre o padrão e discutir sua aplicação prática no desenvolvimento de software.
+
+\end{abstract}
+
+\begin{IEEEkeywords}
+engenharia de software, design patterns, facade, arquitetura de software, acoplamento, complexidade
+\end{IEEEkeywords}
+
+\section{Introdução}
+
+No desenvolvimento de software, especialmente em sistemas de médio e grande porte, é comum lidar com múltiplas classes interdependentes. Essa complexidade tende a crescer com o tempo, principalmente quando o sistema depende de bibliotecas externas ou frameworks que possuem diversas funcionalidades internas.
+
+O material analisado apresenta o padrão de projeto \textit{Facade}, que tem como principal objetivo simplificar essa complexidade ao fornecer uma interface única para um conjunto de classes. Em vez de o cliente interagir diretamente com várias partes do sistema, ele passa a utilizar uma única classe que encapsula toda a lógica necessária.
+
+O conteúdo é estruturado de forma didática, apresentando o problema, a solução, exemplos, estrutura e aplicação. Isso permite compreender não apenas o funcionamento do padrão, mas também o contexto em que ele deve ser utilizado.
+
+\section{Problema da Complexidade}
+
+O material destaca que, ao trabalhar com sistemas complexos, o desenvolvedor frequentemente precisa lidar com diversos objetos, dependências e regras de execução. Conforme ilustrado no conteúdo, é necessário inicializar classes, controlar interações e garantir a ordem correta de chamadas de métodos.
+
+Esse cenário gera um alto nível de acoplamento entre o código cliente e o subsistema. Como consequência, qualquer alteração na implementação interna pode exigir modificações em várias partes do sistema.
+
+Além disso, a complexidade prejudica a legibilidade e a manutenção do código, pois o fluxo de execução fica distribuído entre várias classes. Isso torna o sistema mais difícil de entender, especialmente para novos desenvolvedores.
+
+Outro ponto importante é que essa complexidade pode aumentar ainda mais quando se utiliza código de terceiros, já que o desenvolvedor não tem controle sobre sua estrutura interna.
+
+\section{Solução: o padrão Facade}
+
+Como solução, o material apresenta o padrão \textit{Facade}, que consiste na criação de uma classe responsável por fornecer uma interface simplificada para o subsistema.
+
+De acordo com o conteúdo, a fachada encapsula toda a complexidade interna e expõe apenas as funcionalidades essenciais para o cliente. Dessa forma, o código cliente se torna mais simples e independente da implementação interna.
+
+A analogia apresentada no material compara a fachada a um operador de atendimento, que atua como intermediário entre o cliente e diferentes setores de uma empresa. O cliente não precisa conhecer os detalhes de cada setor, apenas interagir com o operador.
+
+A estrutura do padrão mostra que o cliente se comunica exclusivamente com a fachada, enquanto o subsistema permanece responsável por executar as operações reais. As classes internas não precisam conhecer a existência da fachada.
+
+O exemplo de pseudocódigo apresentado reforça esse conceito ao mostrar como uma única classe pode encapsular várias operações de um sistema de conversão de vídeo, simplificando a interação com um framework complexo.
+
+\section{Vantagens e Limitações}
+
+O padrão Facade apresenta diversas vantagens. A principal delas é a redução do acoplamento, já que o cliente deixa de depender diretamente de múltiplas classes do subsistema.
+
+Outro benefício importante é a melhoria na organização do código, pois a lógica de interação com o sistema fica centralizada em um único ponto. Isso facilita tanto a manutenção quanto a evolução do sistema.
+
+Além disso, o padrão permite substituir ou modificar o subsistema sem impactar o cliente, desde que a interface da fachada seja mantida.
+
+No entanto, o material também destaca algumas limitações. Uma fachada pode se tornar excessivamente complexa se acumular muitas responsabilidades, tornando-se difícil de manter. Nesse caso, pode ser necessário dividir a fachada em múltiplas classes.
+
+Outro ponto é que o padrão não reduz a complexidade interna do sistema, apenas a esconde, o que pode ser uma desvantagem em alguns cenários.
+
+\section{Aplicação Prática}
+
+Na prática, o padrão Facade é amplamente utilizado no desenvolvimento de software moderno.
+
+Um exemplo comum é a integração com APIs ou bibliotecas externas. Em vez de espalhar chamadas complexas pelo sistema, pode-se criar uma fachada que centraliza essas interações, facilitando o uso e a manutenção.
+
+Outro exemplo é a organização de sistemas em camadas. Cada camada pode expor uma fachada que simplifica o acesso às suas funcionalidades, reduzindo o acoplamento entre componentes.
+
+O padrão também é útil em sistemas que passam por mudanças frequentes. Ao centralizar a lógica de interação, torna-se mais fácil adaptar o sistema sem impactar o restante do código.
+
+Durante projetos acadêmicos, a aplicação do Facade pode ajudar a organizar melhor o código e evitar dependências desnecessárias, tornando o sistema mais claro e estruturado.
+
+\section{Conclusão}
+
+O material do Refactoring Guru apresenta de forma clara e didática o padrão de projeto Facade, destacando sua importância na simplificação de sistemas complexos.
+
+O principal entendimento obtido é que a criação de uma interface unificada permite reduzir o acoplamento e facilitar a interação com subsistemas, tornando o código mais organizado e compreensível.
+
+Além disso, o padrão contribui para melhorar a manutenção e evolução do software, sendo uma solução prática para lidar com sistemas complexos.
+
+Dessa forma, compreender e aplicar o padrão Facade é essencial para o desenvolvimento de sistemas mais bem estruturados, tanto em contextos acadêmicos quanto profissionais.
+
+\begin{thebibliography}{00}
+
+\bibitem{b1}
+Refactoring Guru,
+``Facade,''
+Disponível em: https://refactoring.guru/pt-br/design-patterns/facade
+
+\end{thebibliography}
+
+\end{document}
