@@ -1,0 +1,116 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage[brazil]{babel}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}  
+
+\begin{document}
+
+\title{Resenha sobre o Model Context Protocol (MCP)}
+
+\author{
+\IEEEauthorblockN{Artur Bomtempo Colen}
+\IEEEauthorblockA{
+Engenharia de Software \\
+Pontifícia Universidade Católica de Minas Gerais (PUC Minas) \\
+Belo Horizonte, Brasil \\
+abcolen@sga.pucminas.br}
+}
+
+\maketitle
+
+\begin{abstract}
+
+Este trabalho apresenta uma análise do artigo \textit{Model Context Protocol (MCP): Landscape, Security Threats, and Future Research Directions}. O artigo discute o MCP como um protocolo emergente que padroniza a comunicação entre modelos de inteligência artificial e ferramentas externas, com o objetivo de reduzir a fragmentação e melhorar a interoperabilidade entre sistemas. O conteúdo aborda a arquitetura do MCP, seu funcionamento, o ciclo de vida dos servidores, além de discutir o cenário atual de adoção e os principais riscos de segurança envolvidos. Esta resenha tem como objetivo explicar os principais conceitos apresentados, demonstrar o entendimento sobre o protocolo e apresentar sua aplicação prática no desenvolvimento de software.
+
+\end{abstract}
+
+\begin{IEEEkeywords}
+engenharia de software, inteligência artificial, MCP, integração de sistemas, arquitetura de software, segurança
+\end{IEEEkeywords}
+
+\section{Introdução}
+
+Com o avanço dos modelos de inteligência artificial, especialmente aqueles capazes de interagir com ferramentas externas, surgiu a necessidade de integrar diferentes sistemas de forma eficiente. No entanto, essa integração ainda é, em muitos casos, feita de maneira manual e específica para cada aplicação, o que aumenta a complexidade e dificulta a manutenção.
+
+O artigo analisado apresenta o \textit{Model Context Protocol (MCP)} como uma solução para esse problema. O MCP propõe um padrão de comunicação que permite que modelos de IA interajam com ferramentas externas de maneira padronizada, dinâmica e escalável.
+
+O conteúdo demonstra que, sem um padrão como o MCP, cada integração precisa ser implementada individualmente, o que gera redundância e dificulta a evolução dos sistemas. Assim, o protocolo surge como uma forma de organizar esse processo e torná-lo mais eficiente.
+
+\section{Arquitetura do MCP}
+
+O artigo descreve que o MCP é composto por três elementos principais: o \textit{host}, o \textit{client} e o \textit{server} :contentReference[oaicite:1]{index=1}.
+
+O \textit{host} representa a aplicação principal, como um agente de IA ou uma interface com o usuário. O \textit{client} atua como intermediário, sendo responsável por enviar requisições e receber respostas. Já o \textit{server} disponibiliza funcionalidades por meio de ferramentas, recursos e prompts.
+
+Essa arquitetura permite separar responsabilidades e reduzir o acoplamento entre os componentes. Além disso, o MCP possibilita a descoberta dinâmica de ferramentas, o que significa que o sistema pode identificar e utilizar novas funcionalidades em tempo de execução, sem necessidade de configuração prévia.
+
+Outro ponto importante é a comunicação bidirecional, que permite não apenas requisições, mas também notificações e atualizações em tempo real, tornando a interação mais completa.
+
+\section{Funcionamento e Ciclo de Vida}
+
+O funcionamento do MCP envolve várias etapas, como análise de intenção, seleção de ferramentas e execução de operações externas. Esse processo permite que o sistema interprete o que o usuário deseja e escolha automaticamente a melhor ferramenta para executar a tarefa.
+
+O artigo também apresenta o ciclo de vida de um servidor MCP, dividido em quatro fases: criação, implantação, operação e manutenção :contentReference[oaicite:2]{index=2}.
+
+Na fase de criação, o desenvolvedor define as capacidades do servidor e implementa suas funcionalidades. Na implantação, o sistema é disponibilizado para uso. Durante a operação, o servidor interage com usuários e executa tarefas. Por fim, na manutenção, são realizadas atualizações e melhorias contínuas.
+
+Esse ciclo demonstra que o MCP não é apenas um protocolo técnico, mas também um modelo estruturado para o desenvolvimento e gestão de sistemas integrados.
+
+\section{Cenário Atual e Aplicações}
+
+O artigo também analisa o cenário atual do MCP, destacando sua adoção por diversas empresas e ferramentas, incluindo plataformas de desenvolvimento, ambientes de programação e serviços em nuvem :contentReference[oaicite:3]{index=3}.
+
+Essa adoção mostra que o MCP tem potencial para se tornar um padrão importante na integração entre sistemas de IA e ferramentas externas. Ele permite que diferentes serviços sejam conectados de forma mais simples, reduzindo a necessidade de implementações específicas para cada caso.
+
+Além disso, o protocolo facilita a criação de ecossistemas mais flexíveis, onde novas ferramentas podem ser adicionadas sem impactar significativamente o restante do sistema.
+
+\section{Segurança e Desafios}
+
+Apesar dos benefícios, o artigo destaca que o MCP também apresenta desafios, principalmente relacionados à segurança :contentReference[oaicite:4]{index=4}.
+
+Entre os principais riscos estão ataques envolvendo ferramentas maliciosas, problemas de autenticação e vulnerabilidades no controle de acesso. Como o MCP permite a interação com múltiplos sistemas externos, é fundamental garantir que essas interações sejam seguras.
+
+Outro desafio importante é a governança do ecossistema, já que a abertura para integração com diversas ferramentas pode gerar problemas de padronização e controle de qualidade.
+
+Esses pontos mostram que, embora o MCP traga avanços significativos, sua adoção exige cuidados adicionais para garantir segurança e confiabilidade.
+
+\section{Aplicação Prática}
+
+Na prática, o MCP pode ser utilizado em diversos contextos no desenvolvimento de software.
+
+Um exemplo é a construção de agentes inteligentes que precisam acessar diferentes serviços, como APIs, bancos de dados e sistemas externos. Com o MCP, essas integrações podem ser feitas de forma padronizada, reduzindo a complexidade do código.
+
+Outro exemplo é o uso em ferramentas de desenvolvimento, como IDEs com suporte a IA, onde o MCP permite integrar funcionalidades externas de maneira dinâmica, aumentando a produtividade dos desenvolvedores.
+
+Além disso, o protocolo pode ser aplicado em sistemas corporativos que exigem integração entre múltiplos serviços, ajudando a tornar o sistema mais organizado, escalável e fácil de manter.
+
+\section{Conclusão}
+
+O artigo apresenta o Model Context Protocol como uma solução inovadora para o problema de integração em sistemas de inteligência artificial.
+
+O principal entendimento obtido é que a padronização da comunicação entre modelos e ferramentas externas é essencial para reduzir a complexidade e melhorar a escalabilidade dos sistemas.
+
+O MCP se destaca por oferecer uma arquitetura bem definida, suporte à descoberta dinâmica de ferramentas e um modelo estruturado de funcionamento.
+
+Apesar dos desafios, especialmente na área de segurança, o protocolo apresenta grande potencial para se tornar um padrão relevante no desenvolvimento de sistemas modernos.
+
+Dessa forma, compreender o MCP é importante tanto para a formação acadêmica quanto para aplicações práticas no mercado de tecnologia.
+
+\begin{thebibliography}{00}
+
+\bibitem{b1}
+X. Hou et al.,
+``Model Context Protocol (MCP): Landscape, Security Threats, and Future Research Directions,''
+ACM Transactions on Software Engineering and Methodology, 2026.
+
+\end{thebibliography}
+
+\end{document}
