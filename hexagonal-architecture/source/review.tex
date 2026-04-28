@@ -1,0 +1,130 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage[brazil]{babel}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}  
+
+\begin{document}
+
+\title{Resenha do Artigo Hexagonal Architecture (Ports and Adapters)}
+
+\author{
+\IEEEauthorblockN{Artur Bomtempo Colen}
+\IEEEauthorblockA{
+Engenharia de Software \\
+Pontifícia Universidade Católica de Minas Gerais (PUC Minas) \\
+Belo Horizonte, Brasil \\
+abcolen@sga.pucminas.br}
+}
+
+\maketitle
+
+\begin{abstract}
+
+Este trabalho apresenta uma análise do artigo sobre \textit{Hexagonal Architecture}, proposto por Alistair Cockburn. O autor introduz o padrão arquitetural conhecido como Ports and Adapters, cujo objetivo principal é separar a lógica de negócio das dependências externas, como interfaces de usuário, bancos de dados e serviços externos. O artigo discute problemas recorrentes em arquiteturas tradicionais e propõe uma abordagem mais flexível, que permite maior testabilidade, manutenção e evolução do sistema. Esta resenha tem como objetivo apresentar os principais conceitos do artigo, demonstrar o entendimento geral sobre a proposta e discutir sua aplicação prática no contexto de desenvolvimento de software moderno.
+
+\end{abstract}
+
+\begin{IEEEkeywords}
+arquitetura de software, arquitetura hexagonal, ports and adapters, desacoplamento, design de software
+\end{IEEEkeywords}
+
+\section{Introdução}
+
+A arquitetura de software desempenha um papel fundamental na construção de sistemas robustos e sustentáveis. No entanto, muitos sistemas são desenvolvidos com forte acoplamento entre a lógica de negócio e os componentes externos, como interfaces gráficas e bancos de dados, o que dificulta sua evolução ao longo do tempo.
+
+O artigo analisado apresenta a arquitetura hexagonal como uma solução para esse problema. A proposta central é reorganizar a estrutura do sistema de forma que a lógica principal fique isolada e independente de tecnologias externas.
+
+De acordo com o autor, um dos principais erros no desenvolvimento de software é permitir que decisões técnicas influenciem diretamente a lógica de negócio. Isso resulta em sistemas difíceis de testar, manter e modificar. A arquitetura hexagonal busca evitar esse problema ao introduzir uma separação clara entre o núcleo da aplicação e suas interações externas.
+
+Além disso, o artigo propõe uma mudança de mentalidade: em vez de desenvolver sistemas orientados a tecnologias, deve-se desenvolver sistemas orientados ao domínio do problema.
+
+\section{O Conceito de Ports and Adapters}
+
+O conceito central da arquitetura hexagonal é baseado em portas (\textit{ports}) e adaptadores (\textit{adapters}). As portas representam interfaces que definem como o sistema se comunica com o ambiente externo, enquanto os adaptadores são responsáveis por implementar essas interfaces de acordo com uma tecnologia específica.
+
+Conforme descrito no artigo (páginas 2 e 3) :contentReference[oaicite:0]{index=0}, a aplicação deve ser capaz de funcionar independentemente de como é acessada ou de onde os dados vêm. Isso significa que uma mesma funcionalidade pode ser utilizada por diferentes meios, como interface gráfica, API ou testes automatizados.
+
+Os adaptadores atuam como intermediários, convertendo dados externos para um formato compreensível pela aplicação e vice-versa. Dessa forma, a lógica interna permanece intacta, enquanto os detalhes de implementação ficam isolados.
+
+Essa abordagem promove um alto nível de desacoplamento, permitindo que componentes externos sejam modificados ou substituídos sem impactar o funcionamento do sistema.
+
+\section{Estrutura da Arquitetura Hexagonal}
+
+A arquitetura é representada visualmente como um hexágono para reforçar a ideia de múltiplas interfaces de interação, sem uma hierarquia rígida como nas arquiteturas em camadas.
+
+De acordo com o diagrama apresentado no artigo (página 4) :contentReference[oaicite:1]{index=1}, a aplicação ocupa a posição central, enquanto os adaptadores ficam ao redor, conectados por meio das portas.
+
+Diferentemente do modelo tradicional em camadas, onde há uma dependência sequencial entre níveis, a arquitetura hexagonal permite que diferentes adaptadores se conectem diretamente ao núcleo da aplicação, de forma independente.
+
+Outro aspecto importante é a simetria entre entradas e saídas. O artigo enfatiza que tanto a entrada de dados quanto a saída devem ser tratadas de maneira uniforme, o que simplifica o modelo mental do sistema.
+
+Essa estrutura também facilita a reutilização de componentes e a substituição de tecnologias, tornando o sistema mais flexível.
+
+\section{Problemas que a Arquitetura Resolve}
+
+O artigo destaca diversos problemas comuns em sistemas tradicionais que são mitigados pela arquitetura hexagonal.
+
+Um dos principais problemas é o acoplamento entre lógica de negócio e infraestrutura. Quando regras de negócio são implementadas diretamente em interfaces ou acessos a banco de dados, o sistema se torna rígido e difícil de modificar.
+
+Outro problema relevante é a dificuldade de realizar testes automatizados. Em arquiteturas tradicionais, muitas vezes é necessário utilizar banco de dados real ou interfaces completas para testar o sistema, o que torna o processo mais lento e complexo.
+
+Conforme exemplificado no artigo (páginas 5 a 7) :contentReference[oaicite:2]{index=2}, a arquitetura hexagonal permite utilizar adaptadores simulados (\textit{mocks}), possibilitando testes isolados e mais eficientes.
+
+Além disso, o artigo menciona a dificuldade de integração com diferentes sistemas como um desafio recorrente. A utilização de portas padronizadas facilita essa integração, pois define contratos claros de comunicação.
+
+\section{Entendimento Geral do Artigo}
+
+A partir da análise do artigo, é possível compreender que a arquitetura hexagonal representa uma evolução importante na forma de estruturar sistemas.
+
+Um dos principais aprendizados é que a independência da lógica de negócio em relação às tecnologias externas é essencial para a longevidade do software. Sistemas que dependem fortemente de tecnologias específicas tendem a se tornar obsoletos mais rapidamente.
+
+Outro ponto relevante é a importância dos contratos definidos pelas portas. Eles garantem que diferentes partes do sistema possam evoluir de forma independente, desde que respeitem as interfaces estabelecidas.
+
+Também fica evidente que a arquitetura incentiva boas práticas de engenharia de software, como separação de responsabilidades, modularidade e testabilidade.
+
+Por fim, o artigo reforça a ideia de que decisões arquiteturais devem ser tomadas com foco na manutenção e evolução do sistema, e não apenas na facilidade de implementação inicial.
+
+\section{Aplicação Prática}
+
+Na prática, a arquitetura hexagonal pode ser aplicada em diversos cenários do desenvolvimento de software.
+
+Um exemplo comum é o desenvolvimento de sistemas web. A lógica de negócio pode ser implementada no núcleo da aplicação, enquanto diferentes adaptadores permitem acesso via REST, interfaces web ou testes automatizados.
+
+Outro exemplo é a persistência de dados. Em vez de acoplar o sistema diretamente a um banco de dados específico, é possível definir uma porta para acesso a dados e criar adaptadores para diferentes tecnologias, como bancos relacionais ou NoSQL.
+
+A arquitetura também é amplamente utilizada em sistemas que precisam de alta testabilidade. Com o uso de adaptadores simulados, é possível executar testes sem depender de infraestrutura externa, tornando o processo mais rápido e confiável.
+
+Além disso, em ambientes corporativos, onde sistemas precisam se integrar com múltiplos serviços, a arquitetura hexagonal facilita essa integração ao estabelecer interfaces bem definidas.
+
+Dessa forma, sua aplicação contribui para a construção de sistemas mais flexíveis, reutilizáveis e preparados para mudanças.
+
+\section{Conclusão}
+
+O artigo de Alistair Cockburn apresenta uma abordagem clara e eficaz para lidar com problemas comuns no desenvolvimento de software.
+
+A arquitetura hexagonal se destaca por promover o desacoplamento entre a lógica de negócio e os elementos externos, permitindo maior flexibilidade, testabilidade e facilidade de manutenção.
+
+O principal entendimento obtido é que sistemas bem projetados devem ser independentes de tecnologias específicas, focando em contratos e responsabilidades bem definidas.
+
+Além disso, a arquitetura incentiva boas práticas e contribui para o desenvolvimento de software mais sustentável ao longo do tempo.
+
+Portanto, a adoção desse padrão pode trazer benefícios significativos tanto em projetos acadêmicos quanto profissionais.
+
+\begin{thebibliography}{00}
+
+\bibitem{b1}
+A. Cockburn,
+``Hexagonal Architecture (Ports and Adapters),''
+2005.
+
+\end{thebibliography}
+
+\end{document}
